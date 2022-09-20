@@ -1,0 +1,6 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://<username>:<pwd>@<cluster>.mongodb.net/mygrocerylist
+      database: mygrocerylist
