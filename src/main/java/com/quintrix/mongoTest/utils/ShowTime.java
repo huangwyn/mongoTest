@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 public class ShowTime {
   @Scheduled(cron = "* /10 * * * * *")
   public void printTime(){
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss\n");
     LocalDateTime now = LocalDateTime.now();
-    System.out.print(dtf.format(now));
+    System.out.print("The time is now " + dtf.format(now));
   }
 }

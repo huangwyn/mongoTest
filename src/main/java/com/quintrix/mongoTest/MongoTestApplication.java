@@ -1,21 +1,27 @@
 package com.quintrix.mongoTest;
 
 import com.quintrix.mongoTest.model.GroceryItem;
+import com.quintrix.mongoTest.utils.ShowTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import com.quintrix.mongoTest.repository.ItemRepository;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.List;
 
 @SpringBootApplication
 @EnableMongoRepositories
+@EnableScheduling
 public class MongoTestApplication implements CommandLineRunner {
 
 	@Autowired
 	ItemRepository groceryItemRepo;
+
+	@Autowired
+	ShowTime showTime;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MongoTestApplication.class, args);
@@ -52,6 +58,7 @@ public class MongoTestApplication implements CommandLineRunner {
 		findCountOfGroceryItems();
 
 		System.out.println("\n-------------------THANK YOU---------------------------");
+
 	}
 
 	// CRUD ops
